@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/css" href="filmy.css" ?>
-<!DOCTYPE note SYSTEM "filmy.dtd"> 
 
-<listaFilmow>
+<listaFilmow xmlns="http://www.w3schools.com" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xsi:schemaLocation="filmy.xsd">
 <header>Baza danych Cony</header>
 	<film>
 		<tytul rok='2014'>Gone Girl</tytul>
@@ -10,7 +11,7 @@
 			<gatunek>Dramat</gatunek>
 			<gatunek>Thriller</gatunek>
 		</gatunki>
-		<dataPremiery>10/10/2014</dataPremiery>
+		<dataPremiery>2014-10-10</dataPremiery>
 		<rezyser>David Fincher</rezyser>
 	</film>
 	<film>
@@ -19,7 +20,7 @@
 			<gatunek>Romans</gatunek>
 			<gatunek>Thriller</gatunek>
 		</gatunki>
-		<dataPremiery>14/01/2011</dataPremiery>
+		<dataPremiery>2011-01-14</dataPremiery>
 		<rezyser>Florian Henckel von Donnersmarck</rezyser>
 	</film>
 </listaFilmow>

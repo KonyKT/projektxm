@@ -1,14 +1,12 @@
 ﻿<!ENTITY % dane "tytul, gatunki, dataPremiery,rezyser">
 <!ELEMENT listaFilmow (header, film*)>
 <!ELEMENT film (%dane;)>
-<!ELEMENT gatunek(gatunek+)>
+<!ELEMENT gatunki (gatunek+)>
 <!ELEMENT tytul      	(#PCDATA)>
 <!ELEMENT header     	(#PCDATA)>
 <!ELEMENT gatunek	 	(#PCDATA)>
 <!ELEMENT rezyser       (#PCDATA)>
 <!ELEMENT dataPremiery  (#PCDATA)>
   
-<!ATTLIST film
-    rok CDATA #REQUIRED
->
+<!ATTLIST tytul rok CDATA #REQUIRED >
 

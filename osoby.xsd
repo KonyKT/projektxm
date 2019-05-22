@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.w3schools.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listaFilmow">
+     <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element type="xsd:string" name="header" />
+        <xsd:element name="film" maxOccurs="unbounded" minOccurs="0">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="tytul">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="rok" use="required" >
+                      	<xsd:simpleType>
+                      		<xsd:restriction base="xsd:integer">
+      							<xsd:minInclusive value="1900"/>
+      							<xsd:maxInclusive value="2019"/>
+    						</xsd:restriction>
+                      	</xsd:simpleType>
+                      </xsd:attribute>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="gatunki">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="gatunek" maxOccurs="unbounded" minOccurs="0">
+                    	<xsd:simpleType>
+                    		<xsd:restriction base="xsd:string">
+                    			      	<xsd:enumeration value="Dramat"/>
+      									<xsd:enumeration value="Romans"/>
+      									<xsd:enumeration value="Thriller"/>
+                    		</xsd:restriction>
+                    	</xsd:simpleType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element type="xsd:date" name="dataPremiery" />
+              <xsd:element type="xsd:string" name="rezyser" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
