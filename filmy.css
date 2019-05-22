@@ -1,0 +1,61 @@
+header {
+	     font-size : 40px; 
+		  text-align: center;
+		position:absolute;
+		left:40%;
+		color:white;
+}
+
+listaFilmow{
+background-color:black;
+}
+
+film
+	{
+	background-color:grey;
+	display: block;
+	position:relative;
+	top:40px;
+	left:30px;
+	width:400px;
+	border:solid 1px;
+	padding:10px;
+	margin:20px;
+	font-size: 18px;
+	}
+
+film:hover
+	{
+	background-color:white;
+	display: block;
+	position:relative;
+	top:40px;
+	left:30px;
+	width:400px;
+	border:solid 1px;
+	padding:10px;
+	margin:20px;
+	font-size: 18px;
+	}
+
+tytul
+	{
+	font-size: 30px;
+	display: block; 
+	color:blue;
+	font-weight:bold;
+	}
+
+gatunki:before {
+  content:"Gatunek:";
+}
+dataPremiery{
+	display:block;
+}
+
+rezyser:before {
+	content:"Rezyser: ";
+}
+dataPremiery:before{
+	content:"Data premiery: ";
+}
