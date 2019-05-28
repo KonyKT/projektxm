@@ -24,6 +24,9 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <FONT SIZE="4"><B>Tytul : </B></FONT>
 <span style="color:#ff0000"><font size="6">
   <xsl:value-of select="."/></font></span>
+<font size="1">
+(Rok:     <xsl:value-of select="@rok"/>)
+</font>
   <br />
 </xsl:template>
 

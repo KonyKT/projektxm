@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/css" href="filmy.css" ?>
 
-<listaFilmow xmlns="http://www.w3schools.com" 
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-          xsi:schemaLocation="filmy.xsd">
+<listaFilmow>
 <header>Baza danych Cony</header>
 	<film>
 		<tytul rok='2014'>Gone Girl</tytul>
-		<gatunki>
-			<gatunek>Dramat</gatunek>
-			<gatunek>Thriller</gatunek>
-		</gatunki>
+
+		<gatunek>Dramat</gatunek>
+	  <gatunek>Thriller</gatunek>
+
 		<dataPremiery>2014-10-10</dataPremiery>
 		<rezyser>David Fincher</rezyser>
 	</film>
 	<film>
 		<tytul rok='2011'>Turysta</tytul>
-		<gatunki>
+
 			<gatunek>Romans</gatunek>
 			<gatunek>Thriller</gatunek>
-		</gatunki>
+
 		<dataPremiery>2011-01-14</dataPremiery>
 		<rezyser>Florian Henckel von Donnersmarck</rezyser>
 	</film>
+	<gatunki>
+		<typ nazwa="Thriller"/>
+		<typ nazwa="Dramat"/>
+		<typ nazwa="Romans"/>
+	</gatunki>
 </listaFilmow>
 

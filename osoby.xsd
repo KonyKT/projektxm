@@ -1,49 +1,76 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.w3schools.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <xsd:element name="listaFilmow">
-     <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element type="xsd:string" name="header" />
-        <xsd:element name="film" maxOccurs="unbounded" minOccurs="0">
-          <xsd:complexType>
-            <xsd:sequence>
-              <xsd:element name="tytul">
-                <xsd:complexType>
-                  <xsd:simpleContent>
-                    <xsd:extension base="xsd:string">
-                      <xsd:attribute name="rok" use="required" >
-                      	<xsd:simpleType>
-                      		<xsd:restriction base="xsd:integer">
-      							<xsd:minInclusive value="1900"/>
-      							<xsd:maxInclusive value="2019"/>
-    						</xsd:restriction>
-                      	</xsd:simpleType>
-                      </xsd:attribute>
-                    </xsd:extension>
-                  </xsd:simpleContent>
-                </xsd:complexType>
-              </xsd:element>
-              <xsd:element name="gatunki">
-                <xsd:complexType>
-                  <xsd:sequence>
-                    <xsd:element name="gatunek" maxOccurs="unbounded" minOccurs="0">
-                    	<xsd:simpleType>
-                    		<xsd:restriction base="xsd:string">
-                    			      	<xsd:enumeration value="Dramat"/>
-      									<xsd:enumeration value="Romans"/>
-      									<xsd:enumeration value="Thriller"/>
-                    		</xsd:restriction>
-                    	</xsd:simpleType>
-                    </xsd:element>
-                  </xsd:sequence>
-                </xsd:complexType>
-              </xsd:element>
-              <xsd:element type="xsd:date" name="dataPremiery" />
-              <xsd:element type="xsd:string" name="rezyser" />
-            </xsd:sequence>
-          </xsd:complexType>
-        </xsd:element>
-      </xsd:sequence>
-    </xsd:complexType>
-    </xsd:element>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  
+  
+
+        <xsd:complexType name="tytulType">
+            <xsd:simpleContent>
+                <xsd:extension base="xsd:string">
+                    <xsd:attribute name="rok" type="xsd:string" use="required"/>
+                </xsd:extension>
+            </xsd:simpleContent>
+        </xsd:complexType>
+	
+	<xsd:simpleType name="headerType">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="datapremieryType">
+		<xsd:restriction base="xsd:date"/>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="rezyserType">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="gatunekType">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	
+	  <xsd:complexType name="typType">
+        <xsd:attribute type="xsd:string" name="nazwa" use="required"/>
+	</xsd:complexType>
+	
+  
+  	<xsd:complexType name="filmType">
+		<xsd:sequence>
+			<xsd:element name="tytul" type="tytulType"/>
+			<xsd:element name="gatunek" type="gatunekType" maxOccurs="unbounded"/>
+			<xsd:element name="dataPremiery" type="datapremieryType"/>
+			<xsd:element name="rezyser" type="rezyserType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	  	<xsd:complexType name="gatunkiType">
+		<xsd:sequence>
+			<xsd:element name="typ" type="typType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+  
+  
+ 	<xsd:complexType name="listafilmowType">
+		<xsd:sequence>
+			<xsd:element name="header" type="headerType" maxOccurs="1"/>
+			<xsd:element name="film" type="filmType" maxOccurs="unbounded"/>
+			<xsd:element name="gatunki" type="gatunkiType" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+  
+ 	<xsd:element name="listaFilmow" type="listafilmowType">
+		
+		<xsd:key name="klucz">
+
+			<xsd:selector xpath="./gatunki/typ"/>
+			<xsd:field xpath="@nazwa"/>
+		</xsd:key>
+		
+		<xsd:keyref name="kluczRef" refer="klucz">
+			<xsd:selector xpath="./film/gatunek"/>
+			<xsd:field xpath="."/>
+		</xsd:keyref>
+		
+	</xsd:element>
+  
+  
 </xsd:schema>
+
