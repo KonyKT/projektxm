@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/css" href="filmy.css" ?>
 
 <listaFilmow>
-<header>Baza danych Cony</header>
+	<header>Baza danych Cony</header>
+	<film>
+		<tytul rok='1982'>Blade Runner</tytul>
+		<gatunek>Sci-Fi</gatunek>
+		<dataPremiery>1990-12-01</dataPremiery>
+		<rezyser>David Fincher</rezyser>
+	</film>
 	<film>
 		<tytul rok='2014'>Gone Girl</tytul>
-
 		<gatunek>Dramat</gatunek>
-	  <gatunek>Thriller</gatunek>
-
+		<gatunek>Thriller</gatunek>
 		<dataPremiery>2014-10-10</dataPremiery>
 		<rezyser>David Fincher</rezyser>
 	</film>
 	<film>
 		<tytul rok='2011'>Turysta</tytul>
-
-			<gatunek>Romans</gatunek>
-			<gatunek>Thriller</gatunek>
-
+		<gatunek>Romans</gatunek>
+		<gatunek>Thriller</gatunek>
 		<dataPremiery>2011-01-14</dataPremiery>
 		<rezyser>Florian Henckel von Donnersmarck</rezyser>
 	</film>
 	<gatunki>
+		<typ nazwa="Sci-Fi"/>
 		<typ nazwa="Thriller"/>
 		<typ nazwa="Dramat"/>
 		<typ nazwa="Romans"/>
 	</gatunki>
 </listaFilmow>
-
