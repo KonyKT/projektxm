@@ -1,12 +1,22 @@
-﻿<!ENTITY % dane "tytul, gatunki, dataPremiery,rezyser">
-<!ELEMENT listaFilmow (header, film*)>
-<!ELEMENT film (%dane;)>
-<!ELEMENT gatunki (gatunek+)>
-<!ELEMENT tytul      	(#PCDATA)>
-<!ELEMENT header     	(#PCDATA)>
-<!ELEMENT gatunek	 	(#PCDATA)>
-<!ELEMENT rezyser       (#PCDATA)>
-<!ELEMENT dataPremiery  (#PCDATA)>
-  
-<!ATTLIST tytul rok CDATA #REQUIRED >
+﻿    <!ENTITY % dane "tytul, gatunek+, dataPremiery, rezyser">
+    <!ELEMENT listaFilmow (header, film*,gatunki)>
+    <!ELEMENT film (%dane;)>
+    <!ELEMENT gatunki (typ+)>
+
+
+    <!ATTLIST gatunek skrot IDREF #REQUIRED>
+    <!ATTLIST typ   	 skrot ID #REQUIRED>
+
+    <!ELEMENT tytul      	(#PCDATA)>
+    <!ELEMENT header     	(#PCDATA)>
+    <!ELEMENT gatunek	 	(#PCDATA)>
+    <!ELEMENT rezyser       (#PCDATA)>
+    <!ELEMENT dataPremiery  (#PCDATA)>
+    <!ELEMENT typ  (#PCDATA)>
+
+
+    <!ATTLIST tytul rok CDATA #REQUIRED >
+    <!ATTLIST gatunek skrot CDATA #REQUIRED >
+    <!ATTLIST typ skrot CDATA #REQUIRED >
+
 

@@ -46,9 +46,29 @@ tytul
 	font-weight:bold;
 	}
 
-gatunki:before {
-  content:"Gatunek:";
+tytul:after
+{
+	display: block;
+	font-size: 18px;
+	color:black;
+	font-weight:normal;
+	content:"Gatunki:";
+
 }
+
+gatunek
+{
+	font-size: 18px;
+	color:black;
+	font-weight:normal;
+
+	content:"Gatunki:";
+
+}
+gatunek:after {content:attr(skrot);}
+
+
+
 dataPremiery{
 	display:block;
 }

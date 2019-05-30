@@ -58,11 +58,11 @@ public class Main {
     public static int wczytaj(){
         Scanner in = new Scanner(System.in);
         int i = 4;
-            try {
-                i = in.nextInt();
-            }catch (InputMismatchException e){
-                System.out.println("PODAJ DOBRA LICZBE");
-            }
+        try {
+            i = in.nextInt();
+        }catch (InputMismatchException e){
+            System.out.println("PODAJ DOBRA LICZBE");
+        }
 
 
         return i;
@@ -132,9 +132,9 @@ public class Main {
             String date = "s";
             while (date.length() < 4){
                 System.out.println("Podaj date w formacie yyyy-mm-dd: ");
-            scanner = new Scanner(System.in);
-            date = scanner.nextLine();
-        }
+                scanner = new Scanner(System.in);
+                date = scanner.nextLine();
+            }
             String rok = date.substring(0, 4);
 
             int istnieje = 0;
@@ -257,7 +257,7 @@ public class Main {
                         System.out.println("Tytul:\t\t\t" + list.item(j).getTextContent());
                     }
 
-                     else
+                    else
                         continue;
 
                 }
@@ -387,7 +387,7 @@ public class Main {
                             System.out.println("Gatunki:\t\t"+list.item(j).getTextContent());
                             flag++;
                         }
-                    else{
+                        else{
                             System.out.println("\t\t\t\t"+list.item(j).getTextContent());
 
                         }
@@ -547,13 +547,13 @@ public class Main {
                                 }
                             }
                         }
-                            Node nodee = film.item(id);
-                            NodeList list = nodee.getChildNodes();
-                            for (int j = 0; j < list.getLength(); j++) {
-                                if (list.item(j).getLocalName() == "gatunek") {
-                                    list.item(j).setTextContent(gat);
-                                }
+                        Node nodee = film.item(id);
+                        NodeList list = nodee.getChildNodes();
+                        for (int j = 0; j < list.getLength(); j++) {
+                            if (list.item(j).getLocalName() == "gatunek") {
+                                list.item(j).setTextContent(gat);
                             }
+                        }
 
                         break;
                     case 3:
@@ -570,13 +570,13 @@ public class Main {
                                 }
                             }
                         }
-                            Node node = film.item(ide);
-                            NodeList listt = node.getChildNodes();
-                            for (int j = 0; j < listt.getLength(); j++) {
-                                if (listt.item(j).getLocalName() == "dataPremiery") {
-                                    listt.item(j).setTextContent(data);
-                                }
+                        Node node = film.item(ide);
+                        NodeList listt = node.getChildNodes();
+                        for (int j = 0; j < listt.getLength(); j++) {
+                            if (listt.item(j).getLocalName() == "dataPremiery") {
+                                listt.item(j).setTextContent(data);
                             }
+                        }
 
                         break;
                     case 4:
@@ -593,13 +593,13 @@ public class Main {
                                 }
                             }
                         }
-                            Node nodeee = film.item(idee);
-                            NodeList listtt = nodeee.getChildNodes();
-                            for (int j = 0; j < listtt.getLength(); j++) {
-                                if (listtt.item(j).getLocalName() == "rezyser") {
-                                    listtt.item(j).setTextContent(dat);
-                                }
+                        Node nodeee = film.item(idee);
+                        NodeList listtt = nodeee.getChildNodes();
+                        for (int j = 0; j < listtt.getLength(); j++) {
+                            if (listtt.item(j).getLocalName() == "rezyser") {
+                                listtt.item(j).setTextContent(dat);
                             }
+                        }
 
                         break;
                 }

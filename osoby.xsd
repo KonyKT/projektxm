@@ -23,12 +23,21 @@
 		<xsd:restriction base="xsd:string"/>
 	</xsd:simpleType>
 
-	<xsd:simpleType name="gatunekType">
-		<xsd:restriction base="xsd:string"/>
-	</xsd:simpleType>
-	
-	  <xsd:complexType name="typType">
-        <xsd:attribute type="xsd:string" name="nazwa" use="required"/>
+	<xsd:complexType name="gatunekType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="skrot" type="xsd:string" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+
+	<xsd:complexType name="typType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="skrot" type="xsd:string" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
 	</xsd:complexType>
 	
   
@@ -61,12 +70,12 @@
 		<xsd:key name="klucz">
 
 			<xsd:selector xpath="./gatunki/typ"/>
-			<xsd:field xpath="@nazwa"/>
+			<xsd:field xpath="@skrot"/>
 		</xsd:key>
 		
 		<xsd:keyref name="kluczRef" refer="klucz">
 			<xsd:selector xpath="./film/gatunek"/>
-			<xsd:field xpath="."/>
+			<xsd:field xpath="@skrot"/>
 		</xsd:keyref>
 		
 	</xsd:element>
